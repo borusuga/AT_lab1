@@ -1,0 +1,999 @@
+digraph Lab1 {
+
+    node
+        [shape=Mrecord width=1.5];
+
+    subgraph cluster_Map1 {
+
+        label="Map1";
+
+        //
+        // States (Nodes)
+        //
+
+        "Map1::Start"
+            [label="{Start}"];
+
+        "Map1::I"
+            [label="{I}"];
+
+        "Map1::IN"
+            [label="{IN}"];
+
+        "Map1::INT"
+            [label="{INT}"];
+
+        "Map1::S"
+            [label="{S}"];
+
+        "Map1::SH"
+            [label="{SH}"];
+
+        "Map1::SHO"
+            [label="{SHO}"];
+
+        "Map1::SHOR"
+            [label="{SHOR}"];
+
+        "Map1::SHORT"
+            [label="{SHORT}"];
+
+        "Map1::L"
+            [label="{L}"];
+
+        "Map1::LO"
+            [label="{LO}"];
+
+        "Map1::LON"
+            [label="{LON}"];
+
+        "Map1::LONG"
+            [label="{LONG}"];
+
+        "Map1::TYPE"
+            [label="{TYPE}"];
+
+        "Map1::FunctionName"
+            [label="{FunctionName}"];
+
+        "Map1::BRACKET"
+            [label="{BRACKET}"];
+
+        "Map1::SPACE"
+            [label="{SPACE}"];
+
+        "Map1::OK"
+            [label="{OK}"];
+
+        "Map1::Error"
+            [label="{Error|Unknown/\lEOS/\l&nbsp;&nbsp;&nbsp;Unacceptable;\lLetter_I/\lLetter_S/\lLetter_L/\lLetter_N/\lLetter_T/\lSpace/\lLetter_H/\lLetter_O/\lLetter_R/\lLetter_G/\lLetter/\lDigit/\lOpenBracket/\lComma/\lClosingBracket/\l}"];
+
+        "%start"
+            [label="" shape=circle style=filled fillcolor=black width=0.25];
+
+        //
+        // Transitions (Edges)
+        //
+
+        "Map1::Start" -> "Map1::I"
+            [label="Letter_I/\l"];
+
+        "Map1::Start" -> "Map1::S"
+            [label="Letter_S/\l"];
+
+        "Map1::Start" -> "Map1::L"
+            [label="Letter_L/\l"];
+
+        "Map1::Start" -> "Map1::BRACKET"
+            [label="ClosingBracket/\l"];
+
+        "Map1::Start" -> "Map1::Error"
+            [label="Letter_N/\l"];
+
+        "Map1::Start" -> "Map1::Error"
+            [label="Letter_T/\l"];
+
+        "Map1::Start" -> "Map1::Error"
+            [label="Letter_H/\l"];
+
+        "Map1::Start" -> "Map1::Error"
+            [label="Letter_O/\l"];
+
+        "Map1::Start" -> "Map1::Error"
+            [label="Letter_R/\l"];
+
+        "Map1::Start" -> "Map1::Error"
+            [label="Letter_G/\l"];
+
+        "Map1::Start" -> "Map1::Error"
+            [label="Letter/\l"];
+
+        "Map1::Start" -> "Map1::Error"
+            [label="Digit/\l"];
+
+        "Map1::Start" -> "Map1::Error"
+            [label="Space/\l"];
+
+        "Map1::Start" -> "Map1::Error"
+            [label="OpenBracket/\l"];
+
+        "Map1::Start" -> "Map1::Error"
+            [label="Comma/\l"];
+
+        "Map1::Start" -> "Map1::Error"
+            [label="Unknown/\l"];
+
+        "Map1::Start" -> "Map1::Error"
+            [label="EOS/\l"];
+
+        "Map1::I" -> "Map1::IN"
+            [label="Letter_N/\l"];
+
+        "Map1::I" -> "Map1::Error"
+            [label="Letter_I/\l"];
+
+        "Map1::I" -> "Map1::Error"
+            [label="Letter_S/\l"];
+
+        "Map1::I" -> "Map1::Error"
+            [label="Letter_L/\l"];
+
+        "Map1::I" -> "Map1::Error"
+            [label="Letter_T/\l"];
+
+        "Map1::I" -> "Map1::Error"
+            [label="Letter_H/\l"];
+
+        "Map1::I" -> "Map1::Error"
+            [label="Letter_O/\l"];
+
+        "Map1::I" -> "Map1::Error"
+            [label="Letter_R/\l"];
+
+        "Map1::I" -> "Map1::Error"
+            [label="Letter_G/\l"];
+
+        "Map1::I" -> "Map1::Error"
+            [label="Letter/\l"];
+
+        "Map1::I" -> "Map1::Error"
+            [label="Digit/\l"];
+
+        "Map1::I" -> "Map1::Error"
+            [label="Space/\l"];
+
+        "Map1::I" -> "Map1::Error"
+            [label="OpenBracket/\l"];
+
+        "Map1::I" -> "Map1::Error"
+            [label="Comma/\l"];
+
+        "Map1::I" -> "Map1::Error"
+            [label="ClosingBracket/\l"];
+
+        "Map1::I" -> "Map1::Error"
+            [label="Unknown/\l"];
+
+        "Map1::I" -> "Map1::Error"
+            [label="EOS/\l"];
+
+        "Map1::IN" -> "Map1::INT"
+            [label="Letter_T/\l"];
+
+        "Map1::IN" -> "Map1::Error"
+            [label="Letter_I/\l"];
+
+        "Map1::IN" -> "Map1::Error"
+            [label="Letter_S/\l"];
+
+        "Map1::IN" -> "Map1::Error"
+            [label="Letter_L/\l"];
+
+        "Map1::IN" -> "Map1::Error"
+            [label="Letter_N/\l"];
+
+        "Map1::IN" -> "Map1::Error"
+            [label="Letter_H/\l"];
+
+        "Map1::IN" -> "Map1::Error"
+            [label="Letter_O/\l"];
+
+        "Map1::IN" -> "Map1::Error"
+            [label="Letter_R/\l"];
+
+        "Map1::IN" -> "Map1::Error"
+            [label="Letter_G/\l"];
+
+        "Map1::IN" -> "Map1::Error"
+            [label="Letter/\l"];
+
+        "Map1::IN" -> "Map1::Error"
+            [label="Digit/\l"];
+
+        "Map1::IN" -> "Map1::Error"
+            [label="Space/\l"];
+
+        "Map1::IN" -> "Map1::Error"
+            [label="OpenBracket/\l"];
+
+        "Map1::IN" -> "Map1::Error"
+            [label="Comma/\l"];
+
+        "Map1::IN" -> "Map1::Error"
+            [label="ClosingBracket/\l"];
+
+        "Map1::IN" -> "Map1::Error"
+            [label="Unknown/\l"];
+
+        "Map1::IN" -> "Map1::Error"
+            [label="EOS/\l"];
+
+        "Map1::INT" -> "Map1::TYPE"
+            [label="Space/\l"];
+
+        "Map1::INT" -> "Map1::Error"
+            [label="Letter_I/\l"];
+
+        "Map1::INT" -> "Map1::Error"
+            [label="Letter_S/\l"];
+
+        "Map1::INT" -> "Map1::Error"
+            [label="Letter_L/\l"];
+
+        "Map1::INT" -> "Map1::Error"
+            [label="Letter_N/\l"];
+
+        "Map1::INT" -> "Map1::Error"
+            [label="Letter_T/\l"];
+
+        "Map1::INT" -> "Map1::Error"
+            [label="Letter_H/\l"];
+
+        "Map1::INT" -> "Map1::Error"
+            [label="Letter_O/\l"];
+
+        "Map1::INT" -> "Map1::Error"
+            [label="Letter_R/\l"];
+
+        "Map1::INT" -> "Map1::Error"
+            [label="Letter_G/\l"];
+
+        "Map1::INT" -> "Map1::Error"
+            [label="Letter/\l"];
+
+        "Map1::INT" -> "Map1::Error"
+            [label="Digit/\l"];
+
+        "Map1::INT" -> "Map1::Error"
+            [label="OpenBracket/\l"];
+
+        "Map1::INT" -> "Map1::Error"
+            [label="Comma/\l"];
+
+        "Map1::INT" -> "Map1::Error"
+            [label="ClosingBracket/\l"];
+
+        "Map1::INT" -> "Map1::Error"
+            [label="Unknown/\l"];
+
+        "Map1::INT" -> "Map1::Error"
+            [label="EOS/\l"];
+
+        "Map1::S" -> "Map1::SH"
+            [label="Letter_H/\l"];
+
+        "Map1::S" -> "Map1::Error"
+            [label="Letter_I/\l"];
+
+        "Map1::S" -> "Map1::Error"
+            [label="Letter_S/\l"];
+
+        "Map1::S" -> "Map1::Error"
+            [label="Letter_L/\l"];
+
+        "Map1::S" -> "Map1::Error"
+            [label="Letter_N/\l"];
+
+        "Map1::S" -> "Map1::Error"
+            [label="Letter_T/\l"];
+
+        "Map1::S" -> "Map1::Error"
+            [label="Letter_O/\l"];
+
+        "Map1::S" -> "Map1::Error"
+            [label="Letter_R/\l"];
+
+        "Map1::S" -> "Map1::Error"
+            [label="Letter_G/\l"];
+
+        "Map1::S" -> "Map1::Error"
+            [label="Letter/\l"];
+
+        "Map1::S" -> "Map1::Error"
+            [label="Digit/\l"];
+
+        "Map1::S" -> "Map1::Error"
+            [label="Space/\l"];
+
+        "Map1::S" -> "Map1::Error"
+            [label="OpenBracket/\l"];
+
+        "Map1::S" -> "Map1::Error"
+            [label="Comma/\l"];
+
+        "Map1::S" -> "Map1::Error"
+            [label="ClosingBracket/\l"];
+
+        "Map1::S" -> "Map1::Error"
+            [label="Unknown/\l"];
+
+        "Map1::S" -> "Map1::Error"
+            [label="EOS/\l"];
+
+        "Map1::SH" -> "Map1::SHO"
+            [label="Letter_O/\l"];
+
+        "Map1::SH" -> "Map1::Error"
+            [label="Letter_I/\l"];
+
+        "Map1::SH" -> "Map1::Error"
+            [label="Letter_S/\l"];
+
+        "Map1::SH" -> "Map1::Error"
+            [label="Letter_L/\l"];
+
+        "Map1::SH" -> "Map1::Error"
+            [label="Letter_N/\l"];
+
+        "Map1::SH" -> "Map1::Error"
+            [label="Letter_T/\l"];
+
+        "Map1::SH" -> "Map1::Error"
+            [label="Letter_H/\l"];
+
+        "Map1::SH" -> "Map1::Error"
+            [label="Letter_R/\l"];
+
+        "Map1::SH" -> "Map1::Error"
+            [label="Letter_G/\l"];
+
+        "Map1::SH" -> "Map1::Error"
+            [label="Letter/\l"];
+
+        "Map1::SH" -> "Map1::Error"
+            [label="Digit/\l"];
+
+        "Map1::SH" -> "Map1::Error"
+            [label="Space/\l"];
+
+        "Map1::SH" -> "Map1::Error"
+            [label="OpenBracket/\l"];
+
+        "Map1::SH" -> "Map1::Error"
+            [label="Comma/\l"];
+
+        "Map1::SH" -> "Map1::Error"
+            [label="ClosingBracket/\l"];
+
+        "Map1::SH" -> "Map1::Error"
+            [label="Unknown/\l"];
+
+        "Map1::SH" -> "Map1::Error"
+            [label="EOS/\l"];
+
+        "Map1::SHO" -> "Map1::SHOR"
+            [label="Letter_R/\l"];
+
+        "Map1::SHO" -> "Map1::Error"
+            [label="Letter_I/\l"];
+
+        "Map1::SHO" -> "Map1::Error"
+            [label="Letter_S/\l"];
+
+        "Map1::SHO" -> "Map1::Error"
+            [label="Letter_L/\l"];
+
+        "Map1::SHO" -> "Map1::Error"
+            [label="Letter_N/\l"];
+
+        "Map1::SHO" -> "Map1::Error"
+            [label="Letter_T/\l"];
+
+        "Map1::SHO" -> "Map1::Error"
+            [label="Letter_H/\l"];
+
+        "Map1::SHO" -> "Map1::Error"
+            [label="Letter_O/\l"];
+
+        "Map1::SHO" -> "Map1::Error"
+            [label="Letter_G/\l"];
+
+        "Map1::SHO" -> "Map1::Error"
+            [label="Letter/\l"];
+
+        "Map1::SHO" -> "Map1::Error"
+            [label="Digit/\l"];
+
+        "Map1::SHO" -> "Map1::Error"
+            [label="Space/\l"];
+
+        "Map1::SHO" -> "Map1::Error"
+            [label="OpenBracket/\l"];
+
+        "Map1::SHO" -> "Map1::Error"
+            [label="Comma/\l"];
+
+        "Map1::SHO" -> "Map1::Error"
+            [label="ClosingBracket/\l"];
+
+        "Map1::SHO" -> "Map1::Error"
+            [label="Unknown/\l"];
+
+        "Map1::SHO" -> "Map1::Error"
+            [label="EOS/\l"];
+
+        "Map1::SHOR" -> "Map1::SHORT"
+            [label="Letter_T/\l"];
+
+        "Map1::SHOR" -> "Map1::Error"
+            [label="Letter_I/\l"];
+
+        "Map1::SHOR" -> "Map1::Error"
+            [label="Letter_S/\l"];
+
+        "Map1::SHOR" -> "Map1::Error"
+            [label="Letter_L/\l"];
+
+        "Map1::SHOR" -> "Map1::Error"
+            [label="Letter_N/\l"];
+
+        "Map1::SHOR" -> "Map1::Error"
+            [label="Letter_H/\l"];
+
+        "Map1::SHOR" -> "Map1::Error"
+            [label="Letter_O/\l"];
+
+        "Map1::SHOR" -> "Map1::Error"
+            [label="Letter_R/\l"];
+
+        "Map1::SHOR" -> "Map1::Error"
+            [label="Letter_G/\l"];
+
+        "Map1::SHOR" -> "Map1::Error"
+            [label="Letter/\l"];
+
+        "Map1::SHOR" -> "Map1::Error"
+            [label="Digit/\l"];
+
+        "Map1::SHOR" -> "Map1::Error"
+            [label="Space/\l"];
+
+        "Map1::SHOR" -> "Map1::Error"
+            [label="OpenBracket/\l"];
+
+        "Map1::SHOR" -> "Map1::Error"
+            [label="Comma/\l"];
+
+        "Map1::SHOR" -> "Map1::Error"
+            [label="ClosingBracket/\l"];
+
+        "Map1::SHOR" -> "Map1::Error"
+            [label="Unknown/\l"];
+
+        "Map1::SHOR" -> "Map1::Error"
+            [label="EOS/\l"];
+
+        "Map1::SHORT" -> "Map1::TYPE"
+            [label="Space/\l"];
+
+        "Map1::SHORT" -> "Map1::Error"
+            [label="Letter_I/\l"];
+
+        "Map1::SHORT" -> "Map1::Error"
+            [label="Letter_S/\l"];
+
+        "Map1::SHORT" -> "Map1::Error"
+            [label="Letter_L/\l"];
+
+        "Map1::SHORT" -> "Map1::Error"
+            [label="Letter_N/\l"];
+
+        "Map1::SHORT" -> "Map1::Error"
+            [label="Letter_T/\l"];
+
+        "Map1::SHORT" -> "Map1::Error"
+            [label="Letter_H/\l"];
+
+        "Map1::SHORT" -> "Map1::Error"
+            [label="Letter_O/\l"];
+
+        "Map1::SHORT" -> "Map1::Error"
+            [label="Letter_R/\l"];
+
+        "Map1::SHORT" -> "Map1::Error"
+            [label="Letter_G/\l"];
+
+        "Map1::SHORT" -> "Map1::Error"
+            [label="Letter/\l"];
+
+        "Map1::SHORT" -> "Map1::Error"
+            [label="Digit/\l"];
+
+        "Map1::SHORT" -> "Map1::Error"
+            [label="OpenBracket/\l"];
+
+        "Map1::SHORT" -> "Map1::Error"
+            [label="Comma/\l"];
+
+        "Map1::SHORT" -> "Map1::Error"
+            [label="ClosingBracket/\l"];
+
+        "Map1::SHORT" -> "Map1::Error"
+            [label="Unknown/\l"];
+
+        "Map1::SHORT" -> "Map1::Error"
+            [label="EOS/\l"];
+
+        "Map1::L" -> "Map1::LO"
+            [label="Letter_O/\l"];
+
+        "Map1::L" -> "Map1::Error"
+            [label="Letter_I/\l"];
+
+        "Map1::L" -> "Map1::Error"
+            [label="Letter_S/\l"];
+
+        "Map1::L" -> "Map1::Error"
+            [label="Letter_L/\l"];
+
+        "Map1::L" -> "Map1::Error"
+            [label="Letter_N/\l"];
+
+        "Map1::L" -> "Map1::Error"
+            [label="Letter_T/\l"];
+
+        "Map1::L" -> "Map1::Error"
+            [label="Letter_H/\l"];
+
+        "Map1::L" -> "Map1::Error"
+            [label="Letter_R/\l"];
+
+        "Map1::L" -> "Map1::Error"
+            [label="Letter_G/\l"];
+
+        "Map1::L" -> "Map1::Error"
+            [label="Letter/\l"];
+
+        "Map1::L" -> "Map1::Error"
+            [label="Digit/\l"];
+
+        "Map1::L" -> "Map1::Error"
+            [label="Space/\l"];
+
+        "Map1::L" -> "Map1::Error"
+            [label="OpenBracket/\l"];
+
+        "Map1::L" -> "Map1::Error"
+            [label="Comma/\l"];
+
+        "Map1::L" -> "Map1::Error"
+            [label="ClosingBracket/\l"];
+
+        "Map1::L" -> "Map1::Error"
+            [label="Unknown/\l"];
+
+        "Map1::L" -> "Map1::Error"
+            [label="EOS/\l"];
+
+        "Map1::LO" -> "Map1::LON"
+            [label="Letter_N/\l"];
+
+        "Map1::LO" -> "Map1::Error"
+            [label="Letter_I/\l"];
+
+        "Map1::LO" -> "Map1::Error"
+            [label="Letter_S/\l"];
+
+        "Map1::LO" -> "Map1::Error"
+            [label="Letter_L/\l"];
+
+        "Map1::LO" -> "Map1::Error"
+            [label="Letter_T/\l"];
+
+        "Map1::LO" -> "Map1::Error"
+            [label="Letter_H/\l"];
+
+        "Map1::LO" -> "Map1::Error"
+            [label="Letter_O/\l"];
+
+        "Map1::LO" -> "Map1::Error"
+            [label="Letter_R/\l"];
+
+        "Map1::LO" -> "Map1::Error"
+            [label="Letter_G/\l"];
+
+        "Map1::LO" -> "Map1::Error"
+            [label="Letter/\l"];
+
+        "Map1::LO" -> "Map1::Error"
+            [label="Digit/\l"];
+
+        "Map1::LO" -> "Map1::Error"
+            [label="Space/\l"];
+
+        "Map1::LO" -> "Map1::Error"
+            [label="OpenBracket/\l"];
+
+        "Map1::LO" -> "Map1::Error"
+            [label="Comma/\l"];
+
+        "Map1::LO" -> "Map1::Error"
+            [label="ClosingBracket/\l"];
+
+        "Map1::LO" -> "Map1::Error"
+            [label="Unknown/\l"];
+
+        "Map1::LO" -> "Map1::Error"
+            [label="EOS/\l"];
+
+        "Map1::LON" -> "Map1::LONG"
+            [label="Letter_G/\l"];
+
+        "Map1::LON" -> "Map1::Error"
+            [label="Letter_I/\l"];
+
+        "Map1::LON" -> "Map1::Error"
+            [label="Letter_S/\l"];
+
+        "Map1::LON" -> "Map1::Error"
+            [label="Letter_L/\l"];
+
+        "Map1::LON" -> "Map1::Error"
+            [label="Letter_N/\l"];
+
+        "Map1::LON" -> "Map1::Error"
+            [label="Letter_T/\l"];
+
+        "Map1::LON" -> "Map1::Error"
+            [label="Letter_H/\l"];
+
+        "Map1::LON" -> "Map1::Error"
+            [label="Letter_O/\l"];
+
+        "Map1::LON" -> "Map1::Error"
+            [label="Letter_R/\l"];
+
+        "Map1::LON" -> "Map1::Error"
+            [label="Letter/\l"];
+
+        "Map1::LON" -> "Map1::Error"
+            [label="Digit/\l"];
+
+        "Map1::LON" -> "Map1::Error"
+            [label="Space/\l"];
+
+        "Map1::LON" -> "Map1::Error"
+            [label="OpenBracket/\l"];
+
+        "Map1::LON" -> "Map1::Error"
+            [label="Comma/\l"];
+
+        "Map1::LON" -> "Map1::Error"
+            [label="ClosingBracket/\l"];
+
+        "Map1::LON" -> "Map1::Error"
+            [label="Unknown/\l"];
+
+        "Map1::LON" -> "Map1::Error"
+            [label="EOS/\l"];
+
+        "Map1::LONG" -> "Map1::TYPE"
+            [label="Space/\l"];
+
+        "Map1::LONG" -> "Map1::Error"
+            [label="Letter_I/\l"];
+
+        "Map1::LONG" -> "Map1::Error"
+            [label="Letter_S/\l"];
+
+        "Map1::LONG" -> "Map1::Error"
+            [label="Letter_L/\l"];
+
+        "Map1::LONG" -> "Map1::Error"
+            [label="Letter_N/\l"];
+
+        "Map1::LONG" -> "Map1::Error"
+            [label="Letter_T/\l"];
+
+        "Map1::LONG" -> "Map1::Error"
+            [label="Letter_H/\l"];
+
+        "Map1::LONG" -> "Map1::Error"
+            [label="Letter_O/\l"];
+
+        "Map1::LONG" -> "Map1::Error"
+            [label="Letter_R/\l"];
+
+        "Map1::LONG" -> "Map1::Error"
+            [label="Letter_G/\l"];
+
+        "Map1::LONG" -> "Map1::Error"
+            [label="Letter/\l"];
+
+        "Map1::LONG" -> "Map1::Error"
+            [label="Digit/\l"];
+
+        "Map1::LONG" -> "Map1::Error"
+            [label="OpenBracket/\l"];
+
+        "Map1::LONG" -> "Map1::Error"
+            [label="Comma/\l"];
+
+        "Map1::LONG" -> "Map1::Error"
+            [label="ClosingBracket/\l"];
+
+        "Map1::LONG" -> "Map1::Error"
+            [label="Unknown/\l"];
+
+        "Map1::LONG" -> "Map1::Error"
+            [label="EOS/\l"];
+
+        "Map1::TYPE" -> "Map1::FunctionName"
+            [label="Letter/\lCounter;\l"];
+
+        "Map1::TYPE" -> "Map1::FunctionName"
+            [label="Letter_I/\lCounter;\l"];
+
+        "Map1::TYPE" -> "Map1::FunctionName"
+            [label="Letter_S/\lCounter;\l"];
+
+        "Map1::TYPE" -> "Map1::FunctionName"
+            [label="Letter_L/\lCounter;\l"];
+
+        "Map1::TYPE" -> "Map1::FunctionName"
+            [label="Letter_N/\lCounter;\l"];
+
+        "Map1::TYPE" -> "Map1::FunctionName"
+            [label="Letter_T/\lCounter;\l"];
+
+        "Map1::TYPE" -> "Map1::FunctionName"
+            [label="Letter_H/\lCounter;\l"];
+
+        "Map1::TYPE" -> "Map1::FunctionName"
+            [label="Letter_O/\lCounter;\l"];
+
+        "Map1::TYPE" -> "Map1::FunctionName"
+            [label="Letter_R/\lCounter;\l"];
+
+        "Map1::TYPE" -> "Map1::FunctionName"
+            [label="Letter_G/\lCounter;\l"];
+
+        "Map1::TYPE" -> "Map1::Error"
+            [label="Digit/\l"];
+
+        "Map1::TYPE" -> "Map1::Error"
+            [label="Space/\l"];
+
+        "Map1::TYPE" -> "Map1::Error"
+            [label="OpenBracket/\l"];
+
+        "Map1::TYPE" -> "Map1::Error"
+            [label="Comma/\l"];
+
+        "Map1::TYPE" -> "Map1::Error"
+            [label="ClosingBracket/\l"];
+
+        "Map1::TYPE" -> "Map1::Error"
+            [label="Unknown/\l"];
+
+        "Map1::TYPE" -> "Map1::Error"
+            [label="EOS/\l"];
+
+        "Map1::FunctionName" -> "Map1::FunctionName"
+            [label="Letter/\lCounter;\l"];
+
+        "Map1::FunctionName" -> "Map1::FunctionName"
+            [label="Digit/\lCounter;\l"];
+
+        "Map1::FunctionName" -> "Map1::Start"
+            [label="OpenBracket/\lClearCounter;\lTimes;\l"];
+
+        "Map1::FunctionName" -> "Map1::BRACKET"
+            [label="ClosingBracket/\l"];
+
+        "Map1::FunctionName" -> "Map1::SPACE"
+            [label="Comma/\lClearCounter;\lParCount;\l"];
+
+        "Map1::FunctionName" -> "Map1::FunctionName"
+            [label="Letter_I/\lCounter;\l"];
+
+        "Map1::FunctionName" -> "Map1::FunctionName"
+            [label="Letter_S/\lCounter;\l"];
+
+        "Map1::FunctionName" -> "Map1::FunctionName"
+            [label="Letter_L/\lCounter;\l"];
+
+        "Map1::FunctionName" -> "Map1::FunctionName"
+            [label="Letter_N/\lCounter;\l"];
+
+        "Map1::FunctionName" -> "Map1::FunctionName"
+            [label="Letter_T/\lCounter;\l"];
+
+        "Map1::FunctionName" -> "Map1::FunctionName"
+            [label="Letter_H/\lCounter;\l"];
+
+        "Map1::FunctionName" -> "Map1::FunctionName"
+            [label="Letter_O/\lCounter;\l"];
+
+        "Map1::FunctionName" -> "Map1::FunctionName"
+            [label="Letter_R/\lCounter;\l"];
+
+        "Map1::FunctionName" -> "Map1::FunctionName"
+            [label="Letter_G/\lCounter;\l"];
+
+        "Map1::FunctionName" -> "Map1::Error"
+            [label="Space/\l"];
+
+        "Map1::FunctionName" -> "Map1::Error"
+            [label="Unknown/\l"];
+
+        "Map1::FunctionName" -> "Map1::Error"
+            [label="EOS/\l"];
+
+        "Map1::BRACKET" -> "Map1::OK"
+            [label="EOS/\lAcceptable;\l"];
+
+        "Map1::BRACKET" -> "Map1::Error"
+            [label="Letter_I/\l"];
+
+        "Map1::BRACKET" -> "Map1::Error"
+            [label="Letter_S/\l"];
+
+        "Map1::BRACKET" -> "Map1::Error"
+            [label="Letter_L/\l"];
+
+        "Map1::BRACKET" -> "Map1::Error"
+            [label="Letter_N/\l"];
+
+        "Map1::BRACKET" -> "Map1::Error"
+            [label="Letter_T/\l"];
+
+        "Map1::BRACKET" -> "Map1::Error"
+            [label="Letter_H/\l"];
+
+        "Map1::BRACKET" -> "Map1::Error"
+            [label="Letter_O/\l"];
+
+        "Map1::BRACKET" -> "Map1::Error"
+            [label="Letter_R/\l"];
+
+        "Map1::BRACKET" -> "Map1::Error"
+            [label="Letter_G/\l"];
+
+        "Map1::BRACKET" -> "Map1::Error"
+            [label="Letter/\l"];
+
+        "Map1::BRACKET" -> "Map1::Error"
+            [label="Digit/\l"];
+
+        "Map1::BRACKET" -> "Map1::Error"
+            [label="Space/\l"];
+
+        "Map1::BRACKET" -> "Map1::Error"
+            [label="OpenBracket/\l"];
+
+        "Map1::BRACKET" -> "Map1::Error"
+            [label="Comma/\l"];
+
+        "Map1::BRACKET" -> "Map1::Error"
+            [label="ClosingBracket/\l"];
+
+        "Map1::BRACKET" -> "Map1::Error"
+            [label="Unknown/\l"];
+
+        "Map1::SPACE" -> "Map1::Start"
+            [label="Space/\l"];
+
+        "Map1::SPACE" -> "Map1::Error"
+            [label="Letter_I/\l"];
+
+        "Map1::SPACE" -> "Map1::Error"
+            [label="Letter_S/\l"];
+
+        "Map1::SPACE" -> "Map1::Error"
+            [label="Letter_L/\l"];
+
+        "Map1::SPACE" -> "Map1::Error"
+            [label="Letter_N/\l"];
+
+        "Map1::SPACE" -> "Map1::Error"
+            [label="Letter_T/\l"];
+
+        "Map1::SPACE" -> "Map1::Error"
+            [label="Letter_H/\l"];
+
+        "Map1::SPACE" -> "Map1::Error"
+            [label="Letter_O/\l"];
+
+        "Map1::SPACE" -> "Map1::Error"
+            [label="Letter_R/\l"];
+
+        "Map1::SPACE" -> "Map1::Error"
+            [label="Letter_G/\l"];
+
+        "Map1::SPACE" -> "Map1::Error"
+            [label="Letter/\l"];
+
+        "Map1::SPACE" -> "Map1::Error"
+            [label="Digit/\l"];
+
+        "Map1::SPACE" -> "Map1::Error"
+            [label="OpenBracket/\l"];
+
+        "Map1::SPACE" -> "Map1::Error"
+            [label="Comma/\l"];
+
+        "Map1::SPACE" -> "Map1::Error"
+            [label="ClosingBracket/\l"];
+
+        "Map1::SPACE" -> "Map1::Error"
+            [label="Unknown/\l"];
+
+        "Map1::SPACE" -> "Map1::Error"
+            [label="EOS/\l"];
+
+        "Map1::OK" -> "Map1::Error"
+            [label="Letter_I/\l"];
+
+        "Map1::OK" -> "Map1::Error"
+            [label="Letter_S/\l"];
+
+        "Map1::OK" -> "Map1::Error"
+            [label="Letter_L/\l"];
+
+        "Map1::OK" -> "Map1::Error"
+            [label="Letter_N/\l"];
+
+        "Map1::OK" -> "Map1::Error"
+            [label="Letter_T/\l"];
+
+        "Map1::OK" -> "Map1::Error"
+            [label="Letter_H/\l"];
+
+        "Map1::OK" -> "Map1::Error"
+            [label="Letter_O/\l"];
+
+        "Map1::OK" -> "Map1::Error"
+            [label="Letter_R/\l"];
+
+        "Map1::OK" -> "Map1::Error"
+            [label="Letter_G/\l"];
+
+        "Map1::OK" -> "Map1::Error"
+            [label="Letter/\l"];
+
+        "Map1::OK" -> "Map1::Error"
+            [label="Digit/\l"];
+
+        "Map1::OK" -> "Map1::Error"
+            [label="Space/\l"];
+
+        "Map1::OK" -> "Map1::Error"
+            [label="OpenBracket/\l"];
+
+        "Map1::OK" -> "Map1::Error"
+            [label="Comma/\l"];
+
+        "Map1::OK" -> "Map1::Error"
+            [label="ClosingBracket/\l"];
+
+        "Map1::OK" -> "Map1::Error"
+            [label="Unknown/\l"];
+
+        "Map1::OK" -> "Map1::Error"
+            [label="EOS/\l"];
+
+        "%start" -> "Map1::Start"
+    }
+
+}

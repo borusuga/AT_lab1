@@ -1,0 +1,10 @@
+int Foo()
+Int foo()
+int foo(,)
+int foo(long p, int k3)
+int foo(long 3p, int k3)
+long lol()
+short lol(int ffg)
+foo int(long p, int k3)
+njfklsbnvfhjlbeha
+long 0njdwkc(int jd)
