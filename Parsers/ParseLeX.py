@@ -32,9 +32,7 @@ class ParseLeX:
 
     def t_NAME(self, t):
         r'[a-zA-Z][\da-zA-Z]{,15}'
-        if not t.value in _TYPES:
-            t.value = t.value
-            return t
+        return t
 
     def t_error(self, t):
         return False
@@ -70,7 +68,7 @@ class ParseLeX:
             return False, None
 
         token = self.tokens_list.pop(0)
-        if token.type != 'NAME':
+        if token.type != 'NAME' and token.type != 'TYPE':
             return False, None
 
         fun_name = token.value

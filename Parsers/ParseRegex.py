@@ -1,6 +1,6 @@
 import re
 
-_PATTERN = r"^(?P<type>int|short|long) (?P<name>[a-zA-Z][\da-zA-Z]{,15})\((((int|short|long) ([a-zA-Z][\da-zA-Z]{,15})\, )*(int|short|long) ([a-zA-Z][\da-zA-Z]{,15}))*\)$"
+_PATTERN = r"^(?P<type>int|short|long) (?P<name>[a-zA-Z][\da-zA-Z]{,15})\((((int|short|long) ([a-zA-Z][\da-zA-Z]{,15})\, )*(int|short|long) ([a-zA-Z][\da-zA-Z]{,15}))?\)$"
 
 class RegexParser():
     pattern: str

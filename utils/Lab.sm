@@ -1,0 +1,69 @@
+%start Map1::Start
+%class ParseSMC
+
+%map Map1
+%%
+// State		Transition                          End State       Action(s)
+Start {
+                Letter(c:str)                       TYPE            {formType(c);}
+                ClosingBracket[ctxt.isOpenBr()]     BRACKET         {}
+}
+
+
+TYPE {
+                Letter(c:str)                       TYPE            {formType(c);}
+                Digit(c:str)                        TYPE            {formType(c);}
+                Space()  [ctxt.isCorrectType()]     SPACE1          {}
+}
+
+SPACE1 {
+                Letter(c:str)                       FunctionName    {Counter(); formFunName(c);}
+}
+
+FunctionName {
+                Letter(c:str)                       FunctionName    {Counter(); formFunName(c);}
+                Digit(c:str)                        FunctionName    {Counter(); formFunName(c);}
+                OpenBracket
+                    [ctxt.isCorrectLen() and not ctxt.isOpenBr()]
+                                                    Start           {ClearCounter(); Times();}
+                ClosingBracket
+                    [ctxt.isCorrectLen() and ctxt.isOpenBr()]
+                                                    BRACKET         {}
+                Comma
+                    [ctxt.isCorrectLen() and ctxt.isOpenBr()]
+                                                    SPACE           {ClearCounter(); ParCount();}
+}
+
+BRACKET {
+                EOS[ctxt.isCorrectLen()]            OK              {Acceptable();}
+}
+
+SPACE {
+				Space          Start           {}
+}
+
+OK {}
+
+Error {
+				Unknown			nil				{}
+				EOS				nil				{Unacceptable();}
+
+				Letter(c:str)   nil              {}
+				Digit(c:str)    nil              {}
+			    OpenBracket     nil              {}
+				Comma           nil              {}
+                ClosingBracket  nil              {}
+}
+
+Default {
+				 Letter(c:str)  Error           {}
+				 Digit(c:str)   Error           {}
+				 Space          Error           {}
+				 OpenBracket    Error           {}
+				 Comma          Error           {}
+                 ClosingBracket Error           {}
+                 Unknown        Error			{}
+                 EOS			Error			{}
+}
+
+%%

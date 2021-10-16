@@ -1,6 +1,6 @@
 import sys
 
-from Parsers import ParseSMC, ParseRegex, ParseLeX
+from Parsers import ParseRegex, ParseLeX, ParseSMC
 
 from stringGenerator import generate
 
@@ -59,7 +59,8 @@ if __name__ == "__main__":
         text = handler.read()
     else:
         test_dir = "./data/"
-        path = generate(test_dir, N=10, maxLen=100)
+        # path = generate(test_dir, N=10, maxLen=100)
+        path = generate(test_dir, N=1000, maxLen=10)
         handler = open(path, 'r')
         text = handler.read()
 
@@ -72,7 +73,7 @@ if __name__ == "__main__":
     for each in text.split('\n'):
         if res == 1:
             fun_name = checkSMC(each)
-        if res == 2:
+        elif res == 2:
             fun_name = checkLeX(each)
         else:
             fun_name = checkRegex(each)
